@@ -1,0 +1,91 @@
+/* ---------- Screen Preview Mode (Not Print) ---------- */
+
+/* Container that holds pages */
+#resume-preview {
+  width: 210mm;
+  margin: 0 auto;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0 !important;
+  transform: scale(0.88);
+  transform-origin: top center;
+}
+
+/* Pages Wrapper */
+.resume-doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  background: transparent !important;
+}
+
+/* Single A4 Page */
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  padding: 20mm;
+  box-sizing: border-box;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  page-break-after: always;
+  overflow: hidden;
+}
+
+.resume-page:last-child {
+  page-break-after: auto;
+}
+
+/* ---------- PRINT MODE ---------- */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .no-print,
+  .editor-panel,
+  .print-divider {
+    display: none !important;
+  }
+
+  #resume-preview {
+    width: 100% !important;
+    max-width: 210mm;
+    margin: 0 auto !important;
+    transform: scale(1) !important;
+    gap: 0 !important;
+  }
+
+  .resume-page {
+    margin: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-after: always;
+    background: white !important;
+  }
+
+  .resume-page:last-child {
+    page-break-after: auto;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
+

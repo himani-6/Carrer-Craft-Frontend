@@ -1,0 +1,106 @@
+/* FullPreview only – does NOT affect editor+preview page */
+
+/* Wrapper that contains all A4 pages one below another */
+#resume-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+/* Each logical A4 page */
+#resume-preview .resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 18mm 16mm;
+  box-sizing: border-box;
+
+  /* For screen: simple subtle border, no heavy shadow */
+  border: 1px solid rgba(15, 23, 42, 0.18);
+}
+
+/* When printing browser-only (not html2pdf), still try to keep 1 page per A4 */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+
+  #resume-preview {
+    padding: 0;
+  }
+
+  #resume-preview .resume-page {
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  #resume-preview .resume-page:last-child {
+    page-break-after: auto;
+  }
+
+  /* ❌ HIDE TOAST DURING PRINT */
+  #toast-root,
+  #toast-root *,
+  .Toastify,
+  .Toastify * {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@media print {
+
+  /* hide UI */
+  .no-print,
+  button,
+  .no-print * {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  #resume-preview {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 auto !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  .resume-page {
+    page-break-after: always !important;
+  }
+
+  /* ❌ HIDE TOAST DURING PRINT (SECOND BLOCK) */
+  #toast-root,
+  #toast-root *,
+  .Toastify,
+  .Toastify * {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Hide ALL toast notifications when printing */
+@media print {
+  #toast-root,
+  #toast-root *,
+  .react-hot-toast,
+  .react-hot-toast *,
+  .Toastify,
+  .Toastify * {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+

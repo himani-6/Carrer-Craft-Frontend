@@ -1,0 +1,9 @@
+/* Fix Next.js <Image> clipping so neon shines outside */
+.next-glow {
+  overflow: visible !important;
+}
+
+.next-glow * {
+  overflow: visible !important;
+}
+
