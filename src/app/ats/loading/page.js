@@ -35,7 +35,7 @@ export default function AtsLoadingPage() {
       );
       formData.append("job_description", payload.jobDescription);
 
-      const res = await fetch("http://127.0.0.1:8000/ats-analyze", {
+      const res = await fetch("https://carrer-craft-backend.onrender.com/ats-analyze", {
         method: "POST",
         body: formData,
       });

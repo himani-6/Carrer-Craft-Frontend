@@ -28,7 +28,7 @@ export default function LiveJobsPage() {
       formData.append("job_title", jobTitle);
       formData.append("location", location || "");
 
-      const res = await fetch("http://127.0.0.1:8000/api/live-jobs", {
+      const res = await fetch("https://carrer-craft-backend.onrender.com/api/live-jobs", {
         method: "POST",
         body: formData,
       });

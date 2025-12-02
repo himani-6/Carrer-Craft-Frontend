@@ -103,7 +103,7 @@ export default function AtsUploadPage() {
       formData.append("job_description", jobDesc);
       formData.append("userId", user.uid); // ⭐ VERY IMPORTANT
 
-      const res = await fetch("http://127.0.0.1:8000/ats-analyze", {
+      const res = await fetch("https://carrer-craft-backend.onrender.com/ats-analyze", {
         method: "POST",
         body: formData,
       });

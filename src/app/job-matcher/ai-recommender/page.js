@@ -41,7 +41,7 @@ export default function AIRecommenderPage() {
         formData.append("resume", blob, "resume.pdf");
       }
 
-      const res = await fetch("http://127.0.0.1:8000/api/ai-recommend", {
+      const res = await fetch("https://carrer-craft-backend.onrender.com/api/ai-recommend", {
         method: "POST",
         body: formData,
       });
