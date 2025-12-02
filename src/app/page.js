@@ -15,10 +15,11 @@ export default function HomePage() {
     <>
       <Navbar />
       <main className="mt-20">
-        <Hero />
-        {
+        {/* ✅ Hero uses useSearchParams → wrap in Suspense */}
+        <Suspense fallback={<div className="text-white text-center py-10">Loading...</div>}>
+          <Hero />
+        </Suspense>
 
-        }
         <Features />
         <HelpSection />
         <ContactSection />
