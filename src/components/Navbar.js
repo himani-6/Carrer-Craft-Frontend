@@ -41,7 +41,7 @@ export default function Navbar() {
             height={40}
             className="rounded-full object-cover"
           />
-          <h1 className="text-2xl font-bold tracking-wide">CareerCraft</h1>
+          <h1 className="text-2xl font-bold tracking-wide">CarrerCraft</h1>
         </div>
 
         {/* Right Section: Navigation Links */}
